@@ -1,14 +1,16 @@
-  const Header = ({ title }) => {
-    return (
-      <header className='header'>
-        <h1>{title}</h1>
-        <button className='btn'>Add</button>
-      </header>
-    )
-  }
+import Button from './Button'
 
-  Header.defaultProps = {
-    title: 'Task Tracker',
-  }
+const Header = ({ title }) => {
+  return (
+    <header className='header'>
+      <h1>{title}</h1>
+      <Button />
+    </header>
+  )
+}
 
-  export default Header
+Header.defaultProps = {
+  title: 'Task Tracker',
+}
+
+export default Header
