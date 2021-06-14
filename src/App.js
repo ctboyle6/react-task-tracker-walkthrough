@@ -29,4 +29,8 @@ function App() {
   );
 }
 
+const deleteTask = (id) => {
+
+}
+
 export default App;
