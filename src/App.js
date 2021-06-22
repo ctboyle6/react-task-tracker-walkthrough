@@ -4,7 +4,8 @@ import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 
 function App() {
-    const [tasks, setTasks] = useState([
+  const [showAddTasks, setShowAddTasks] = useState(false)
+  const [tasks, setTasks] = useState([
     {
       id: 1,
       text: 'take out the trash',
@@ -46,8 +47,11 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
-      <AddTask onAdd={addTask} />
+      <Header
+        onAdd={() => setShowAddTasks(!showAddTasks)}
+        showAdd={showAddTasks}
+      />
+      {showAddTasks && <AddTask onAdd={addTask} />}
       {tasks.length >0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}/> : 'No Tasks to Show'}
     </div>
   );
